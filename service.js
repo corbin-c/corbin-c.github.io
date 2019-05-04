@@ -33,6 +33,7 @@ self.addEventListener("install", async () => {
     );
     const options = { applicationServerKey, userVisibleOnly: true };
     const subscription = await self.registration.pushManager.subscribe(options);
+    console.log(subscription)
  //   const response = await saveSubscription(subscription);
  //   console.log(response);
   } catch (err) {
