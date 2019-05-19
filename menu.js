@@ -43,7 +43,7 @@ async function menu()
 			var li = document.createElement('li');
 			var a = document.createElement('a');
 			a.href = user[i].homepage;
-			a.title = ((user[i].description != null) && (typeof user[i].description !== "undefined" && (user[i].description != "")) ? user[i].description:user[i].name;
+			a.title = ((user[i].description != null) && (typeof user[i].description !== "undefined") && (user[i].description != "")) ? user[i].description:user[i].name;
 			a.innerHTML = user[i].name;
 			li.append(a)
 			menu.append(li)
