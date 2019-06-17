@@ -38,12 +38,12 @@ async function menu()
 	sibling.parentElement.insertBefore(menu,sibling);
 	for (i in user)
 	{
-		if ((user[i].homepage != null) && (typeof user[i].homepage !== "undefined"))
+		if ((user[i].homepage != null) && (typeof user[i].homepage !== "undefined") && (user[i].homepage != ""))
 		{
 			var li = document.createElement('li');
 			var a = document.createElement('a');
 			a.href = user[i].homepage;
-			a.title = ((user[i].description != null) && (typeof user[i].description !== "undefined")) ? user[i].description:user[i].name;
+			a.title = ((user[i].description != null) && (typeof user[i].description !== "undefined") && (user[i].description != "")) ? user[i].description:user[i].name;
 			a.innerHTML = user[i].name;
 			li.append(a)
 			menu.append(li)
