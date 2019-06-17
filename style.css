@@ -34,13 +34,13 @@ header,footer
 header
 {
 	margin-bottom: 25px;
-	border-bottom: 6px solid #09f;
+	border-bottom: 6px solid #33AAFF;
 	top: 0px;
 }
 footer
 {
 	margin-top: 25px;
-	border-top: 6px solid #09f;
+	border-top: 6px solid #33AAFF;
 	bottom: 0px;
 	text-align: right;
 }
