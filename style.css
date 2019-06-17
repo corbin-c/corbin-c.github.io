@@ -17,14 +17,14 @@ body
 }
 section
 {
-	min-height: calc(100% - 270px);
+	min-height: calc(100% - 210px);
 	padding-left: 2%;
 	padding-right: 2%;
 }
 header,footer
 {
-	background-color: #cfcfdd;
-	height: 110px;
+	background-color: #ececec;
+	height: 80px;
 	width: 100%;
 	position: relative;
 	z-index:102;
@@ -34,13 +34,13 @@ header,footer
 header
 {
 	margin-bottom: 25px;
-	border-bottom: 8px solid #09f;
+	border-bottom: 6px solid #09f;
 	top: 0px;
 }
 footer
 {
 	margin-top: 25px;
-	border-top: 8px solid #09f;
+	border-top: 6px solid #09f;
 	bottom: 0px;
 	text-align: right;
 }
@@ -58,7 +58,6 @@ header ul li
 	text-transform: uppercase;
 	padding-right: 2%;
 	padding-left: 2%;
-	margin-top: 8px;
 	color: #4a4a4a;
 	font-weight: 400;
 	line-height: 24px;
@@ -71,4 +70,8 @@ header ul, header ul li, header ul li
 header ul li:last-child
 {
 	border: none;
+}
+a, a:visited
+{
+	color: black;
 }
