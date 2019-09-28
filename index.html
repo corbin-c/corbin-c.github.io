@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Clément Corbin ¦ Développeur web</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="portfolio.css" />
   </head>
   <body>
     <header>
-      <h1></h1>
+      <h1>Clément Corbin</h1>
+      <h2>Développeur web</h2>
+      <nav>
+        <ul>
+          <li><a href="#about" title="accéder à la section présentation">Présentation</a></li>
+          <li><a href="#projects" title="accéder à la section projets">Projets</a></li>
+          <li><a href="#contact" title="accéder à la section contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section id="about"></section>
@@ -18,7 +26,16 @@
         <article></article>
         <article></article>
       </section>
-      <section id="contact"></section>
+      <section id="contact">
+        <form>
+          <label for="email">Votre adresse e-mail</label>
+          <input id="email" name="email" type="email">
+          <label for="name">Votre nom</label>
+          <input id="name" name="name" type="text">
+          <textarea placeholder="Votre message"></textarea>
+          <input type="submit">
+        </form>
+      </section>
     </main>
     <footer></footer>
   </body>
