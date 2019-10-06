@@ -1,6 +1,5 @@
 *
 {
-	font-family: Sans;
 	margin: 0;
 	padding: 0;
 	font-family: Sans;
@@ -15,7 +14,7 @@ body
 	width: 100%;
 	height: 100vh;
 }
-section
+main
 {
 	min-height: calc(100% - 210px);
 	padding-left: 2%;
