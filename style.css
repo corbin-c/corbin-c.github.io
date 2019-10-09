@@ -63,6 +63,7 @@ header ul:focus::after {
 }
 header nav:focus-within::after {
   content: "×";
+  font-size: 1.5em;
 }
 header nav {
   display:flex;
