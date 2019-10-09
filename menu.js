@@ -3,6 +3,7 @@ const USER = "corbin-c";
   let sibling = document.querySelector("#menujs");
   let menu = document.createElement("nav");
   let list = document.createElement("ul");
+  list.setAttribute("tabindex","1");
   menu.append(list);
   user = await fetch("https://api.github.com/users/"+USER+"/repos");
   user = await user.json();
