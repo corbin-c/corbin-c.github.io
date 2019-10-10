@@ -33,7 +33,10 @@ header {
 
   margin-bottom: 25px;
   border-bottom: 6px solid #33AAFF;
+  padding-bottom: 0px;
   top: 0px;
+  display: flex;
+  justify-content: space-between;
 }
 footer {
 
@@ -42,12 +45,14 @@ footer {
   bottom: 0px;
   text-align: right;
 }
+header nav {
+  display:flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  flex: 1 0 auto;
+}
 header ul * {
   display: none;
-}
-header ul::after {
-  content: "≡";
-  font-size: 1.5em;
 }
 header ul:focus {
   outline: none;
@@ -58,16 +63,16 @@ header ul:focus {
 header ul:focus *{
   display: inline;
 }
+header ul::after {
+  content: "≡";
+  font-size: 2.5em;
+}
 header ul:focus::after {
   content: "";
 }
 header nav:focus-within::after {
   content: "×";
-  font-size: 1.5em;
-}
-header nav {
-  display:flex;
-  justify-content: flex-end;
+  font-size: 2.5em;
 }
 header ul {
   display: inline;
