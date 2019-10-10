@@ -1,14 +1,14 @@
-const USER = "corbin-c";
 (async () => {
-  let sibling = document.querySelector("#menujs");
+  const USER = location.href.split("://")[1].split(".github.io")[0];
   let menu = document.createElement("nav");
   let list = document.createElement("ul");
   list.setAttribute("tabindex","1");
   menu.append(list);
-  user = await fetch("https://api.github.com/users/"+USER+"/repos");
-  user = await user.json();
-  sibling.parentElement.insertBefore(menu,sibling);
-  user.map(repo => {
+  document.querySelector("header").append(menu);
+  let user_repos = await fetch("https://api.github.com/users/"+USER+"/repos");
+  user_repos = await user_repos.json();
+  console.log(user_repos.map(r => r.homepage));
+  user_repos.map(repo => {
     if ((repo.homepage != null)
       && (typeof repo.homepage !== "undefined")
       && (repo.homepage != "")
@@ -26,4 +26,14 @@ const USER = "corbin-c";
       list.append(li)
     }
   });
+  let current_repo = user_repos.find(
+    repo => ((repo.homepage != null)
+      && (typeof repo.homepage !== "undefined")
+      && (repo.homepage != "")
+      && (repo.homepage.indexOf(location.href) >= 0)));
+  let link = document.createElement("a");
+  link.setAttribute("href",current_repo.html_url);
+  link.setAttribute("title",current_repo.name + " by " + USER + " on Github");
+  link.innerText = "View code on Github";
+  document.querySelector("footer").append(link);
 })();
