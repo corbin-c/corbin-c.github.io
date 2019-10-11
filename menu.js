@@ -6,7 +6,8 @@
   menu.append(list);
   document.querySelector("header").append(menu);
   let user_repos = await fetch("https://api.github.com/users/"+USER+"/repos");
-  user_repos = await user_repos.json();  user_repos.map(repo => {
+  user_repos = await user_repos.json();  
+  user_repos.map(repo => {
     if ((repo.homepage != null)
       && (typeof repo.homepage !== "undefined")
       && (repo.homepage != "")
@@ -29,9 +30,11 @@
       && (typeof repo.homepage !== "undefined")
       && (repo.homepage != "")
       && (repo.homepage.indexOf(location.href) >= 0)));
-  let link = document.createElement("a");
-  link.setAttribute("href",current_repo.html_url);
-  link.setAttribute("title",current_repo.name + " by " + USER + " on Github");
-  link.innerText = "View code on Github";
-  document.querySelector("footer").append(link);
+  if (current_repo) {
+    let link = document.createElement("a");
+    link.setAttribute("href",current_repo.html_url);
+    link.setAttribute("title",current_repo.name + " by " + USER + " on Github");
+    link.innerText = "View code on Github";
+    document.querySelector("footer").append(link);
+  }
 })();
