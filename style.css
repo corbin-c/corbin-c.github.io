@@ -64,10 +64,12 @@ header ul:focus *, header ul:focus-within *{
 }
 header ul::after {
   content: "≡";
+  width: 1em;
   font-size: 2.5em;
 }
 header ul:focus::after, header ul:focus-within::after {
   content: "";
+  width: 0;
 }
 header nav:focus-within {
   width: 100vw;
@@ -76,6 +78,7 @@ header nav:focus-within {
 }
 header nav:focus-within::after {
   content: "×";
+  width: 1em;
   font-size: 2.5em;
   position: relative;
   top: -20px;
