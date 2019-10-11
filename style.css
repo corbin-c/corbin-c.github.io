@@ -23,23 +23,28 @@ header,footer {
   position: relative;
   z-index:102;
   left: 0px;
-  padding: 10px;
 }
 header {
   margin-bottom: 25px;
   border-bottom: 6px solid #33AAFF;
-  padding-bottom: 0px;
   top: 0px;
   display: flex;
+  flex-flow: row;
   justify-content: space-between;
 }
 footer {
+  padding: 10px;
   margin-top: 25px;
   border-top: 6px solid #33AAFF;
   bottom: 0px;
   text-align: right;
 }
+header h1 {
+  padding-top: 10px;
+  padding-left: 10px;
+}
 header nav {
+  padding-right: 10px;
   display:flex;
   justify-content: flex-end;
   align-self: flex-end;
@@ -64,33 +69,69 @@ header ul::after {
 header ul:focus::after, header ul:focus-within::after {
   content: "";
 }
+header nav:focus-within {
+  width: 100vw;
+  background-color: #ececec;
+  border-bottom: 6px solid #33AAFF;
+}
 header nav:focus-within::after {
   content: "×";
   font-size: 2.5em;
+  position: relative;
+  top: -20px;
+}
+header:focus-within {
+  flex-flow: column;
 }
 header ul {
   display: inline;
   align-items: center;
-  font-weight: 400;
   justify-content: flex-end;
   list-style-type: none;
   align-self: flex-end;
+  flex-flow: column;
 }
 header ul li {
   word-break: keep-all;
   text-transform: uppercase;
   padding-right: 2%;
   padding-left: 2%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   color: #4a4a4a;
   font-weight: 400;
   line-height: 24px;
-  border-right: 1px solid #bfbfbf;
+  width: 80%;
+  border-bottom: 1px solid #bfbfbf;
 }
 header nav {
   font-size: 15px;
 }
 header ul li:last-child {
   border: none;
+}
+@media only screen and (min-width: 900px) {
+  header:focus-within {
+    flex-flow: row;
+  }
+  header ul {
+    flex-flow: row;
+  }
+  header nav:focus-within {
+    width: auto;
+    background-color: none;
+    border-bottom: 0;
+  }
+  header ul li {
+    width: auto;
+    border-right: 1px solid #bfbfbf;
+    border-bottom: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  header nav:focus-within::after {
+    position: static;
+  }
 }
 a, a:visited {
   color: black;
