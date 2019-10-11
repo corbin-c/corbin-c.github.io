@@ -26,10 +26,7 @@
     }
   });
   let current_repo = user_repos.find(
-    repo => ((repo.homepage != null)
-      && (typeof repo.homepage !== "undefined")
-      && (repo.homepage != "")
-      && (repo.homepage == location.href.split("/")[3])));
+    repo => (repo.name == location.href.split("/")[3]));
   if (current_repo) {
     let link = document.createElement("a");
     link.setAttribute("href",current_repo.html_url);
