@@ -29,7 +29,7 @@
     repo => ((repo.homepage != null)
       && (typeof repo.homepage !== "undefined")
       && (repo.homepage != "")
-      && (repo.homepage.indexOf(location.href) >= 0)));
+      && (repo.homepage == location.href.split("/")[3])));
   if (current_repo) {
     let link = document.createElement("a");
     link.setAttribute("href",current_repo.html_url);
