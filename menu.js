@@ -6,9 +6,7 @@
   menu.append(list);
   document.querySelector("header").append(menu);
   let user_repos = await fetch("https://api.github.com/users/"+USER+"/repos");
-  user_repos = await user_repos.json();
-  console.log(user_repos.map(r => r.homepage));
-  user_repos.map(repo => {
+  user_repos = await user_repos.json();  user_repos.map(repo => {
     if ((repo.homepage != null)
       && (typeof repo.homepage !== "undefined")
       && (repo.homepage != "")

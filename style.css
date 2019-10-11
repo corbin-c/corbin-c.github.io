@@ -84,7 +84,7 @@ header ul li {
   line-height: 24px;
   border-right: 1px solid #bfbfbf;
 }
-header ul, header ul li, header ul li {
+header nav {
   font-size: 15px;
 }
 header ul li:last-child {
