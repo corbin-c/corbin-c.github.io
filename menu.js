@@ -1,13 +1,13 @@
 (async () => {
   const USER = location.href.split("://")[1].split(".github.io")[0];
+  let user_repos = await fetch("https://api.github.com/users/"+USER+"/repos");
+  user_repos = await user_repos.json();  
   if (!import.meta.url.split("#")[1]) {
     let menu = document.createElement("nav");
     let list = document.createElement("ul");
     list.setAttribute("tabindex","1");
     menu.append(list);
     document.querySelector("header").append(menu);
-    let user_repos = await fetch("https://api.github.com/users/"+USER+"/repos");
-    user_repos = await user_repos.json();  
     user_repos.map(repo => {
       if ((repo.homepage != null)
         && (typeof repo.homepage !== "undefined")
